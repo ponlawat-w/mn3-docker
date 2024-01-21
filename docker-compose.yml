@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  arango:
+    image: arangodb:3.10
+    container_name: arango
+    restart: always
+    environment:
+      ARANGO_NO_AUTH: '1'
+    ports:
+      - 8529:8529
+    volumes:
+      - arango-data:/var/lib/arangodb3/
+  mn3:
+    image: mn3
+    container_name: mn3
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - mn3-data:/app/fs/
+      - ./default.config.json:/app/default.config.json
+      - ./default.crypto.privateKey:/app/default.crypto.privateKey
+      - ./default.crypto.publicKey:/app/default.crypto.publicKey
+
+volumes:
+  arango-data: {}
+  mn3-data: {}
