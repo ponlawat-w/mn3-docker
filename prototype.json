@@ -1,0 +1,55 @@
+{
+  "pkgs": {
+    "@moodlenet/core": {
+      "baseFsFolder": "/app/fs",
+      "instanceDomain": "http://localhost:8080",
+      "npmRegistry": "https://registry.npmjs.org",
+      "mainLogger": {
+        "consoleLevel": "info",
+        "file": {
+          "path": "./log/moodlenet.%DATE%.log",
+          "level": "info"
+        }
+      }
+    },
+    "@moodlenet/crypto": {
+      "keys": {
+        "alg": "RS256",
+        "type": "PKCS8",
+        "private": "/app/default.crypto.privateKey",
+        "public": "/app/default.crypto.publicKey"
+      }
+    },
+    "@moodlenet/arangodb": {
+      "connectionCfg": {
+        "url": "http://arango:8529"
+      }
+    },
+    "@moodlenet/http-server": {
+      "port": 8080
+    },
+    "@moodlenet/ed-resource": {
+      "resourceUploadMaxSize": "1.2GB"
+    },
+    "@moodlenet/simple-email-auth": {
+      "newUserNotPublisher": false
+    },
+    "@moodlenet/email-service": {
+      "nodemailerTransport": {
+        "host": "",
+        "port": 465,
+        "secure": true,
+        "auth": {
+          "user": "",
+          "pass": ""
+        }
+      }
+    },
+    "@moodlenet/system-entities": {
+      "rootPassword": "root"
+    },
+    "@moodlenet/react-app": {
+      "defaultImageUploadMaxSize": "3MB"
+    }
+  }
+}
