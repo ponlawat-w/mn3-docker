@@ -1,8 +1,8 @@
-FROM node:16
+FROM node:20
 
 WORKDIR /app
 
-ARG version=3.2.0
+ARG version=4.3.3
 
 RUN npm create @moodlenet@${version} .
 RUN echo '{}' > /app/default.config.json \
