@@ -6,7 +6,7 @@ on:
         description: '@moodlenet/create Package Version'
         type: string
         required: false
-        default: '3.2.0'
+        default: '4.3.3'
       docker-username:
         description: 'Docker Hub Username'
         type: string
